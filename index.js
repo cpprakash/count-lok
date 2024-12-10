@@ -36,12 +36,12 @@ function read_single_file(file_path)
         {
             let out=[];
             out = result.split("\n");
-            console.log("|" + file_path + "\t\t\t\b|" +out.length+"\t\t\t\t\b\b|");
+            console.log("|" + file_path + "\t\t\t\b|\t\t" +out.length+"\t\t\b\b|");
         }
     else 
         {
             console.log("no result");
-        }
+        } 
 }
 
 function start_file()
@@ -56,9 +56,11 @@ function start_file()
         {
             console.log(file_list);
         }
+    console.log("|------------------------------|------------------------------|");
     file_list.forEach(element => {
         read_single_file(element);
     });
+    console.log("|------------------------------|------------------------------|");
     //read_single_file();
     
 }
