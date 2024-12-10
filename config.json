@@ -1,0 +1,8 @@
+{
+    "file-types": [
+        ".js",
+        ".ts"
+    ],
+    "max-depth": 3,
+    "output-format": "txt"
+}
