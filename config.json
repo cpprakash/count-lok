@@ -4,6 +4,8 @@
         ".ts"
     ],
     "max-depth": 3,
-    "output-format": "txt",
+    "output-format": [
+        ".json"
+    ],
     "root": "./"
 }

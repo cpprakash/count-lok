@@ -1,8 +1,9 @@
 const fs = require("fs")
+const path = require("path")
 
 let file_types = [".js"];
 let max_depth = 1;
-let output_format = ".txt";
+let output_format = [];
 let root = "./"
 
 function read_config_file()
@@ -30,6 +31,11 @@ function read_single_file(file_path)
         console.log("file path " + file_path + " is directory, will skip it.");
         return;
     }
+    if(!file_types.includes(path.extname(file_path))) // extension is not required
+        {
+            console.log("The file extension " + path.extname(file_path) + " is not required.");
+            return;
+        }
     const result = fs.readFileSync(file_path, "utf-8");
     console.log("|------------------------------|------------------------------|");
     if(result)
