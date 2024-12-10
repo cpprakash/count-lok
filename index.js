@@ -31,11 +31,12 @@ function read_single_file(file_path)
             return;
         }
     const result = fs.readFileSync(file_path, "utf-8");
+    console.log("|------------------------------|------------------------------|");
     if(result)
         {
             let out=[];
             out = result.split("\n");
-            console.log(out.length);
+            console.log("|" + file_path + "\t\t\t\b|" +out.length+"\t\t\t\t\b\b|");
         }
     else 
         {
