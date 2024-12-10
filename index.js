@@ -26,22 +26,22 @@ function read_config_file()
 function read_single_file(file_path)
 {
     if(fs.lstatSync(file_path).isDirectory()) 
-        {
-            console.log("file path " + file_path + " is directory, will skip it.");
-            return;
-        }
+    {
+        console.log("file path " + file_path + " is directory, will skip it.");
+        return;
+    }
     const result = fs.readFileSync(file_path, "utf-8");
     console.log("|------------------------------|------------------------------|");
     if(result)
-        {
-            let out=[];
-            out = result.split("\n");
-            console.log("|" + file_path + "\t\t\t\b|\t\t" +out.length+"\t\t\b\b|");
-        }
+    {
+        let out=[];
+        out = result.split("\n");
+        console.log("|" + file_path + "\t\t\t\b|\t\t" +out.length+"\t\t\b\b|");
+    }
     else 
-        {
-            console.log("no result");
-        } 
+    {
+        console.log("no result");
+    } 
 }
 
 function start_file()
@@ -49,13 +49,13 @@ function start_file()
     read_config_file();
     const file_list = fs.readdirSync(root);
     if(!file_list) 
-        {
-            console.log("nothing found at " + root);
-        }
-        else
-        {
-            console.log(file_list);
-        }
+    {
+        console.log("nothing found at " + root);
+    }
+    else
+    {
+        console.log(file_list);
+    }
     console.log("|------------------------------|------------------------------|");
     file_list.forEach(element => {
         read_single_file(element);
