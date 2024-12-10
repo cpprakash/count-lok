@@ -1,11 +1,13 @@
 {
     "file-types": [
         ".js",
-        ".ts"
+        ".ts",
+        ".cpp",
+        ".hpp"
     ],
     "max-depth": 3,
     "output-format": [
         ".json"
     ],
-    "root": "./"
+    "root": "../../cpp/bmp_image/"
 }

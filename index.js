@@ -26,6 +26,11 @@ function read_config_file()
 
 function read_single_file(file_path)
 {
+    /*if(file_path == ".gitignore" || file_path== ".vscode") 
+        {
+            return;
+        }
+    */
     if(fs.lstatSync(file_path).isDirectory()) 
     {
         console.log("file path " + file_path + " is directory, will skip it.");
@@ -64,7 +69,7 @@ function start_file()
     }
     console.log("|------------------------------|------------------------------|");
     file_list.forEach(element => {
-        read_single_file(element);
+        read_single_file(root + element);
     });
     console.log("|------------------------------|------------------------------|");
     //read_single_file();
