@@ -3,6 +3,7 @@ const fs = require("fs")
 let file_types = [".js"];
 let max_depth = 1;
 let output_format = ".txt";
+let root = "./"
 
 function read_config_file()
 {
@@ -17,7 +18,8 @@ function read_config_file()
         file_types = config_obj['file-types'];
         max_depth = config_obj['max-depth'];
         output_format = config_obj['output-format'];
-        console.log("File type = " + file_types + " max depth = " + max_depth + " output format=" + output_format);
+        root = config_obj['root'];
+        console.log("File type= " + file_types + " max depth= " + max_depth + " output format=" + output_format + " root=" + root);
     }
 }
 
