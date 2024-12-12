@@ -202,11 +202,14 @@ else if(arguments_arr.length == 3)
 }
 else if (arguments_arr.length == 4)
 {
-
+    extract_arg_value(arguments_arr[2]);
+    extract_arg_value(arguments_arr[3]);
 }
 else if (arguments_arr.length == 5)
 {
-
+    extract_arg_value(arguments_arr[2]);
+    extract_arg_value(arguments_arr[3]);
+    extract_arg_value(arguments_arr[4]);
 }
 else if (arguments_arr.length == 6)
 {
