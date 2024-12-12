@@ -8,7 +8,7 @@ let root = "./"
 
 function read_config_file()
 {
-    const result = fs.readFileSync("config.json", "utf-8");
+    const result = fs.readFileSync(path.join("./","config.json"), "utf-8");
     if(!result) 
     {
         console.log("File could not be read, will use default values.");
@@ -55,7 +55,7 @@ function read_single_file(file_path)
     } 
 }
 
-function start_file()
+function start_script()
 {
     read_config_file();
     const file_list = fs.readdirSync(root);
@@ -76,4 +76,4 @@ function start_file()
     
 }
 
-start_file();
+start_script();
