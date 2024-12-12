@@ -33,16 +33,16 @@ function read_single_file(file_path)
     */
     if(fs.lstatSync(file_path).isDirectory()) 
     {
-        console.log("file path " + file_path + " is directory, will skip it.");
+        //console.log("file path " + file_path + " is directory, will skip it.");
         return;
     }
     if(!file_types.includes(path.extname(file_path))) // extension is not required
         {
-            console.log("The file extension " + path.extname(file_path) + " is not required.");
+            //console.log("The file extension " + path.extname(file_path) + " is not required.");
             return;
         }
     const result = fs.readFileSync(file_path, "utf-8");
-    console.log("|------------------------------|------------------------------|");
+    console.log("|----------------------------------------------|------------------------------|");
     if(result)
     {
         let out=[];
@@ -67,11 +67,11 @@ function start_script()
     {
         console.log(file_list);
     }
-    console.log("|------------------------------|------------------------------|");
+    console.log("|----------------------------------------------|------------------------------|");
     file_list.forEach(element => {
         read_single_file(root + element);
     });
-    console.log("|------------------------------|------------------------------|");
+    console.log("|----------------------------------------------|------------------------------|");
     //read_single_file();
     
 }
