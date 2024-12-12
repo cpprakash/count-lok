@@ -108,6 +108,11 @@ process.argv.forEach(function (val, index, array) {
     arguments_arr.push(val);
 });
 
+// If no arguments have been passed, then we need to read the config file to get the parameters for this script
+// if config file is also not there, then we need to define the default values for these parameters
+// if arguments have been passed
+// it should follow this format
+// nodejs ./index.js --root=<folder where the script should start current directory is default> --file-types=[<file types to run the scripts on>] --output=[<all supported output formats>] --depth=<a number between 0-3 where 0 is default>
 if (arguments_arr.length == 2)
 {
     console.log("No additional arguments have been passed, will read the config file.");
