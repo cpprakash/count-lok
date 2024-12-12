@@ -1,6 +1,12 @@
+/**
+ * includes directives
+ */
 const fs = require("fs")
 const path = require("path")
 
+/**
+ * variables
+ */
 let file_types = ["*"];
 let max_depth = 0;
 let output_format = [".json"];
@@ -8,11 +14,18 @@ let root = "./";
 
 let arguments_arr = [];
 
+/**
+ * final result object
+ */
 let final_result = {
     file_name: 0,
     lines_of_code : 0
 };
 
+/***
+ * list of valid arguments that the script supports
+ * if an argument is not listed here, the argument parsing will throw the error and return
+ */
 let valid_arguments = [
     "--root",
     "--ext",
@@ -20,9 +33,19 @@ let valid_arguments = [
     "--depth"
 ];
 
+/**
+ * array of final result objects which is written on the disk at the final stage
+ */
 let final_results = [];
+/**
+ * name of the output result file, the extension will be added later either from config
+ * or from the command line arguments
+ */
 let output_file_name = "result"; 
 
+/***
+ * red the config file, only if the arguments (valid) are not supplied by command line
+ */
 function read_config_file()
 {
     console.log("read_config_file::method called");
@@ -45,6 +68,11 @@ function read_config_file()
     }
 }
 
+/***
+ * this function reads a file passed as an argument and counts the total lines 
+ * then it creates a final_result object and assigns the values
+ * which is pushed on the final_results array
+ */
 function read_single_file(file_path)
 {
     if(file_path == "./.gitignore" || file_path== ".vscode") 
@@ -76,7 +104,7 @@ function read_single_file(file_path)
     }
     else 
     {
-        console.log("no result");
+        console.log("The file " + file_path + " could not be read. Please check the arguments again.");
     } 
 }
 
@@ -125,16 +153,6 @@ function start_script()
  */
 function extract_arg_value(args)
 {    
-    //console.log(args);
-    let config_obj = null;
-    let val = args.split("=");
-    const result = fs.readFileSync(path.join("./","config.json"), "utf-8");
-    if (!result) {
-        console.log("File could not be read, will use default values.");
-    }
-    else {
-        config_obj = JSON.parse(result);
-    }
     //console.log(val[0]);
     //console.log(val[1]);
     if (!valid_arguments.includes(val[0]))
