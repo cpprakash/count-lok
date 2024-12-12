@@ -6,6 +6,8 @@ let max_depth = 1;
 let output_format = [];
 let root = "./";
 
+let arguments_arr = [];
+
 let final_result = {
     file_name: 0,
     lines_of_code : 0
@@ -72,7 +74,7 @@ function read_single_file(file_path)
 
 function start_script()
 {
-    read_config_file();
+    
     const file_list = fs.readdirSync(root);
     if(!file_list) 
     {
@@ -102,4 +104,19 @@ function start_script()
     
 }
 
-start_script();
+process.argv.forEach(function (val, index, array) {
+    arguments_arr.push(val);
+});
+
+if (arguments_arr.length == 2)
+{
+    console.log("No additional arguments have been passed, will read the config file.");
+    read_config_file();
+}
+else
+{
+    //parse the arguments
+
+    start_script();
+}
+
