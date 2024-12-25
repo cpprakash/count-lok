@@ -67,7 +67,6 @@ function read_config_file()
         console.log("File type= " + file_types + " max depth= " + max_depth + " output format=" + output_format + " root=" + root);
     }
 }
-
 /***
  * this function reads a file passed as an argument and counts the total lines 
  * then it creates a final_result object and assigns the values
