@@ -238,4 +238,3 @@ else if (arguments_arr.length == 6)
     //console.log(arguments_arr);
 }
 start_script();
-
