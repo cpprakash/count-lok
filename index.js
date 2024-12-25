@@ -77,7 +77,7 @@ function read_single_file(file_path)
 {
     if(file_path == "./.gitignore" || file_path== ".vscode") 
     {
-            return;
+        return;
     }
     if(fs.lstatSync(file_path).isDirectory()) 
     {
@@ -86,8 +86,8 @@ function read_single_file(file_path)
     }
     if(!file_types.includes(path.extname(file_path))) // extension is not required
     {
-            //console.log("The file extension " + path.extname(file_path) + " is not required.");
-            return;
+        //console.log("The file extension " + path.extname(file_path) + " is not required.");
+        return;
     }
     const result = fs.readFileSync(file_path, "utf-8");
     console.log("Reading file = " + file_path);
