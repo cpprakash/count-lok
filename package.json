@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Chander Prakash",
   "license": "ISC",
   "description": "Count the lines of code in the project."
 }
